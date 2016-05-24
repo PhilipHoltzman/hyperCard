@@ -9,7 +9,6 @@ import random
 pygame.init()
 pygame.mixer.init()
 
-
 # pallette for the game 
 black = (0,0,0)
 white = (255,255,255)
@@ -18,9 +17,9 @@ white = (255,255,255)
 display_width = 800
 display_height = 600
  
-# create the display or "Canvas" and title screen 
+# create the display or "Canvas" and title screen, with no frame
 gameDisplay = pygame.display.set_mode((display_width,display_height),pygame.NOFRAME)
-pygame.display.set_caption('HYPERCARD TEMPLATE')
+pygame.display.set_caption('HYPERCARD TEMPLATE') # not seen cuz no frame
 
 # game UI/OS icon
 #icon = pygame.image.load('YourICON.png')
@@ -34,8 +33,6 @@ def card1():
 
 	card1 = True
 
-	
-
 	cursor = pygame.mouse.get_pos()
 	click = pygame.mouse.get_pressed()
 
@@ -43,7 +40,7 @@ def card1():
 
 		for event in pygame.event.get():
 			# if player closes window it quits
-			if event.type == pygame.QUIT:
+			if event.type == pygame.QUIT: # there is no border so this maybe be redundant
 				pygame.quit()
 				quit()
 			# press c down and end intro..
