@@ -1,10 +1,7 @@
 # Hypercard Template for Pygame
-
 import pygame
 import time
 import random
-
-
 
 
 # boiler plate for all pygame calls
@@ -21,7 +18,11 @@ white = (255,255,255)
 # play area generated or res
 display_width = 800
 display_height = 600
- 
+
+# loading card images
+card1BG = pygame.image.load('card1.png')
+card2BG = pygame.image.load('cards/card2.png')
+
 # create the display or "Canvas" and title screen, with no frame
 gameDisplay = pygame.display.set_mode((display_width,display_height),pygame.NOFRAME)
 pygame.display.set_caption('HYPERCARD TEMPLATE') # not seen cuz no frame
@@ -41,6 +42,8 @@ def card1():
 	cursor = pygame.mouse.get_pos()
 	click = pygame.mouse.get_pressed()
 
+
+
 	while card1:
 
 		for event in pygame.event.get():
@@ -57,23 +60,15 @@ def card1():
 				if event.key == pygame.K_q:
 					pygame.quit()
 					quit()
-		if 0  < cursor[0] < 800 and 0  < cursor[1] < 600:
-			if event.type == pygame.MOUSEBUTTONDOWN:
-				card1 = False
+			if 0  < cursor[0] < 800 and 0  < cursor[1] < 600:
+				if event.type == pygame.MOUSEBUTTONDOWN:
+					card1 = False
 
-		# display bg image			
+		# display bg image	
+		gameDisplay.blit(card1BG, (0,0))	
 		pygame.display.update()
 		clock.tick(10)
 
-
-
-
-# load background image 
-#lvlBG = pygame.image.load('lvlBG.png')
-
-
-
-clock = pygame.time.Clock()
 
 card1()
 
