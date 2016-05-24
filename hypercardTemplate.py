@@ -5,9 +5,14 @@ import time
 import random
 
 
+
+
 # boiler plate for all pygame calls
 pygame.init()
 pygame.mixer.init()
+
+FPS = 60
+clock = pygame.time.Clock()
 
 # pallette for the game 
 black = (0,0,0)
@@ -66,7 +71,7 @@ def card1():
 # load background image 
 #lvlBG = pygame.image.load('lvlBG.png')
 
-FPS = 25
+
 
 clock = pygame.time.Clock()
 
